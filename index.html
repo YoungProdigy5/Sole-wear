@@ -262,7 +262,7 @@ dialog.wide{width:min(920px,96vw)}
 .leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--card);color:var(--ink)}
 .leaflet-popup-content a{color:var(--cyan)}
 #omap{height:min(55vh,420px);border-radius:14px;border:1px solid var(--line)}
-</style>
+</style><link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="ann">New drops every week &nbsp;|&nbsp; Pay on delivery or online &nbsp;|&nbsp; Chat with us on every order</div>
@@ -786,6 +786,8 @@ if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion:reduce
 if(WHATSAPP){$("wa").href="https://wa.me/"+WHATSAPP.replace(/\D/g,"")+"?text="+encodeURIComponent("Hi, I want to order from Youngest Fashion");$("wa").hidden=false}
 
 loadProducts().then(d=>{products=d;readHash();renderTabs();render();renderCart()});
-</script>
+</script><script src="live-map.js"></script>
+<script src="cancel-order.js"></script>
+<script src="shop-extras.js"></script>
 <script src="live-map.js"></script></body>
 </html>
