@@ -1,0 +1,72 @@
+/* YOUNGEST FASHION: style.css (polish layer)
+   Link AFTER the inline <style>:  <link rel="stylesheet" href="style.css"> */
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
+body{-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom)}
+::selection{background:var(--pink);color:#fff}
+*{scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+img{max-width:100%}
+
+/* header + safe areas */
+header{padding-top:max(12px,env(safe-area-inset-top))}
+.ann{padding-top:max(7px,env(safe-area-inset-top))}
+
+/* touch-friendly controls */
+.btn,.add,.cartbtn,.tab,.checkout{min-height:44px}
+.sz{min-width:44px;min-height:40px;font-weight:600}
+.heart,.ico,.qty button{min-width:40px;min-height:40px}
+input,select,textarea{font-size:16px} /* stops iOS zoom on focus */
+.f input:focus,.f textarea:focus,.ctl input:focus,.ctl select:focus{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(32,227,255,.18);outline:0}
+
+/* cards */
+.card{box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 10px 30px rgba(0,0,0,.18)}
+.card .pic{aspect-ratio:4/5;border-radius:16px}
+.info h3{line-height:1.2;letter-spacing:-.01em}
+.card:hover{box-shadow:0 22px 50px rgba(255,46,136,.28)}
+.badge{letter-spacing:.04em;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+
+/* dialogs + cart drawer */
+dialog{overscroll-behavior:contain;padding:22px}
+dialog::backdrop{background:rgba(5,5,15,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+dialog[open]{animation:pop .22s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+aside{border-radius:22px 0 0 22px;padding-bottom:max(18px,env(safe-area-inset-bottom))}
+.row{align-items:flex-start}
+
+/* toast */
+#toast{box-shadow:0 14px 40px rgba(0,0,0,.4);font-weight:600;animation:drop .3s ease-out}
+@keyframes drop{from{opacity:0;transform:translate(-50%,-14px)}to{opacity:1;transform:translateX(-50%)}}
+
+/* floating buttons clear the home bar */
+#top{bottom:max(14px,env(safe-area-inset-bottom))}
+.wa{bottom:max(14px,env(safe-area-inset-bottom))}
+
+/* section titles + footer links */
+.sec h2,.allh{text-wrap:balance}
+.foot a{padding:4px 0}
+
+/* phones: two products per row, tighter spacing */
+@media (max-width:520px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px;padding-inline:3vw}
+  .info{padding:10px;gap:4px}
+  .info h3{font-size:.95rem}
+  .buy{flex-wrap:wrap;gap:6px}
+  .add{padding:9px 12px;font-size:.85rem}
+  .rc{flex-basis:140px}
+  .hero{padding-top:14vw}
+  .cta .btn{flex:1 1 auto;text-align:center}
+  .tabs{top:58px}
+  dialog{width:96vw;max-height:92vh}
+  .kpi{grid-template-columns:repeat(2,1fr)}
+}
+
+/* large screens: roomier layout */
+@media (min-width:1200px){
+  .grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px}
+  .sec,.trust{max-width:1400px;margin-inline:auto}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  dialog[open],#toast{animation:none}
+}
