@@ -1,0 +1,115 @@
+/* YOUNGEST FASHION: theme.css  (Bold streetwear)
+   Load LAST in <head>, after style.css:  <link rel="stylesheet" href="theme.css">
+   Hard edges, offset shadows, lime + hot pink, price tags, tape badges. Works in day and night mode. */
+
+:root[data-theme]{--lime:#c6ff3d;--on:#0a0a0a;--grad:#c6ff3d;--g1:#c6ff3d;--g2:#c6ff3d;--pink:#ff2e88;--cyan:#c6ff3d}
+:root[data-theme="dark"]{--bg:#0a0a0a;--card:#151515;--line:#2e2e2e;--ink:#f5f3ee;--price:#c6ff3d;--sh:#ff2e88}
+:root[data-theme="light"]{--bg:#f3f0e8;--card:#ffffff;--line:#d6d0c2;--ink:#0a0a0a;--price:#0a0a0a;--sh:#0a0a0a}
+:root[data-theme] body{background:var(--bg)}
+.blob,.sticker+.x{display:none}
+
+/* type: loud and uppercase */
+h1,h2,h3,.logo,.tile b,.tab,.btn,.add,.cartbtn,.checkout{text-transform:uppercase}
+.hero h1,.slide.cat h2,.ft h2,.promo h2,.sec h2,.allh{letter-spacing:-.03em}
+:root[data-theme] .hero h1{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--ink);font-size:clamp(2.6rem,11vw,8rem);line-height:.9}
+:root[data-theme] .hero h1 span{background:var(--lime);-webkit-background-clip:border-box;background-clip:border-box;color:#0a0a0a;padding:0 .12em;display:inline-block;transform:rotate(-2deg)}
+
+/* header + announcement bar */
+.ann{background:var(--ink);color:var(--bg);letter-spacing:.06em;text-transform:uppercase;font-weight:800;font-size:.78rem}
+header{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom:2px solid var(--ink)}
+:root[data-theme] .logo{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--ink);font-size:1.35rem;letter-spacing:-.04em}
+.logo::after{content:"";display:inline-block;width:.45em;height:.45em;background:var(--lime);margin-left:6px;transform:rotate(45deg);outline:2px solid var(--ink)}
+
+/* buttons: solid lime with hard shadow */
+.btn,.add,.cartbtn,.checkout{background:var(--lime);color:#0a0a0a;border:2px solid #0a0a0a;border-radius:6px;font-weight:800;letter-spacing:.05em;box-shadow:3px 3px 0 var(--sh);transition:transform .12s,box-shadow .12s}
+.btn:hover,.add:hover,.cartbtn:hover,.checkout:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--sh)}
+.btn:active,.add:active,.cartbtn:active,.checkout:active{transform:translate(2px,2px);box-shadow:0 0 0 var(--sh)}
+.btn::after,.add::after,.cartbtn::after{display:none}
+.btn.alt,.checkout{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink);box-shadow:none}
+.btn.ghost:hover{background:var(--ink);color:var(--bg);box-shadow:none}
+.add{border-radius:6px;padding:9px 14px}
+.add:disabled{box-shadow:none}
+.promo .btn,.slide.cat .btn{background:#0a0a0a;color:var(--lime);border-color:#0a0a0a;box-shadow:3px 3px 0 var(--pink)}
+
+/* tabs, sizes, hearts */
+.tab{border:2px solid var(--ink);border-radius:6px;background:transparent;font-weight:800;letter-spacing:.04em;font-size:.82rem}
+.tab:hover:not(:disabled){transform:none;background:var(--ink);color:var(--bg)}
+.tab[aria-pressed=true]{background:var(--lime);color:#0a0a0a;border-color:#0a0a0a;box-shadow:3px 3px 0 var(--sh)}
+.sz{border:2px solid var(--line);border-radius:4px;font-weight:800}
+.sz[aria-pressed=true]{background:var(--lime);color:#0a0a0a;border-color:#0a0a0a}
+.heart{border:2px solid var(--line);border-radius:6px;color:var(--pink)}
+
+/* product cards */
+.card{border:2px solid var(--line);border-radius:10px;box-shadow:none;transition:transform .15s,box-shadow .15s,border-color .15s}
+.card:hover{transform:translate(-4px,-4px);border-color:var(--ink);box-shadow:6px 6px 0 var(--sh)}
+.card .pic{border-radius:6px;aspect-ratio:4/5;filter:none}
+.card:hover .pic{transform:none}
+.info h3{font-size:.98rem;font-weight:900;letter-spacing:-.01em}
+.info .meta{font-weight:700}
+:root[data-theme] .card .price{background:var(--lime);-webkit-background-clip:border-box;background-clip:border-box;color:#0a0a0a;padding:2px 9px;border-radius:4px;font-size:1.05rem;transform:rotate(-2deg)}
+.badge{background:var(--pink);color:#fff;border-radius:3px;transform:rotate(-5deg);letter-spacing:.08em;text-transform:uppercase;box-shadow:2px 2px 0 #0a0a0a}
+
+/* section headings: thick lime underline */
+.sec h2::after,.allh::after{height:10px;width:70%;border-radius:0;background:var(--lime);z-index:-1;bottom:2px}
+.sec h2,.allh{z-index:0}
+
+/* marquee: caution tape */
+.marquee{background:var(--lime);color:#0a0a0a;border-top:2px solid #0a0a0a;border-bottom:2px solid #0a0a0a;font-size:.85rem;padding:12px 0}
+.marquee span::after{color:#0a0a0a}
+
+/* category tiles + trending rail */
+.tile{border:2px solid #0a0a0a;border-radius:10px;box-shadow:5px 5px 0 var(--sh);text-transform:uppercase}
+.tile:hover{transform:translate(-3px,-3px) rotate(0);box-shadow:8px 8px 0 var(--sh)}
+.rc{border:2px solid var(--line);border-radius:10px}
+.rc:hover{border-color:var(--ink);transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--sh)}
+
+/* hero slider */
+.fi{border:3px solid var(--ink);border-radius:10px;box-shadow:10px 10px 0 var(--sh)}
+.pill{background:#0a0a0a;color:var(--lime);border-radius:3px;transform:rotate(-3deg);letter-spacing:.08em;text-transform:uppercase}
+.sticker{border:3px solid #0a0a0a;box-shadow:6px 6px 0 var(--pink)}
+.sl{border:2px solid var(--ink);border-radius:6px;background:var(--bg)}
+.dots button{border-radius:0;background:rgba(128,128,128,.5)}
+.dots button[aria-current=true]{background:var(--lime);outline:2px solid #0a0a0a}
+.perks li{border:2px solid var(--ink);border-radius:4px;background:transparent;backdrop-filter:none;text-transform:uppercase;letter-spacing:.05em;font-size:.75rem;font-weight:800}
+
+/* promo banner */
+.promo{background:var(--lime);color:#0a0a0a;border:2px solid #0a0a0a;border-radius:10px;box-shadow:8px 8px 0 var(--pink);text-shadow:none}
+.promo::after{display:none}
+
+/* inputs */
+.ctl input,.ctl select,.f input,.f textarea,.pager select{border:2px solid color-mix(in srgb,var(--ink) 40%,transparent);border-radius:6px}
+.ctl input:focus,.ctl select:focus,.f input:focus,.f textarea:focus{border-color:var(--lime);box-shadow:3px 3px 0 var(--lime)}
+.mic{border:2px solid var(--ink);background:transparent}
+.mic.on{background:var(--pink);border-color:var(--pink)}
+
+/* dialogs, cart drawer, toast */
+dialog{border:2px solid var(--ink);border-radius:10px;box-shadow:8px 8px 0 var(--sh)}
+aside{border-radius:0;border:0;border-left:2px solid var(--ink);box-shadow:none}
+#toast{background:var(--lime);color:#0a0a0a;border:2px solid #0a0a0a;border-radius:6px;box-shadow:4px 4px 0 var(--pink);text-transform:uppercase;font-size:.85rem}
+.total{text-transform:uppercase}
+.row{border-bottom:2px dashed var(--line)}
+.ord,.trust div,.ins>div,.kpi div,.rel .relc{border:2px solid var(--line);border-radius:10px}
+.msg.me{background:var(--lime);color:#0a0a0a}
+:root[data-theme] .kpi b{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--ink)}
+.trk i{border:2px solid var(--line);border-radius:4px}
+.trk i.on{background:var(--lime);color:#0a0a0a;border-color:#0a0a0a}
+.trk i.now{box-shadow:3px 3px 0 var(--pink)}
+.bar i{border-radius:0;height:10px}
+
+/* floating buttons */
+#top{background:var(--lime);color:#0a0a0a;border:2px solid #0a0a0a;border-radius:6px;box-shadow:3px 3px 0 var(--sh)}
+.wa{border:2px solid #0a0a0a;border-radius:6px;box-shadow:3px 3px 0 #0a0a0a;text-transform:uppercase;font-size:.85rem}
+
+/* footer: always black */
+footer,.foot{background:#0a0a0a;color:#f5f3ee;border-top:6px solid var(--lime)}
+.foot a{color:#f5f3ee}
+.foot b{color:var(--lime)}
+.foot .flogo{color:#f5f3ee}
+
+@media (max-width:520px){
+  .card:hover{transform:none;box-shadow:none;border-color:var(--line)}
+  .card .price{font-size:.95rem}
+  .fi{box-shadow:6px 6px 0 var(--sh)}
+}
+@media (prefers-reduced-motion:reduce){.btn,.add,.cartbtn,.card,.tile,.rc{transition:none}}
